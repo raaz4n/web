@@ -12,3 +12,42 @@ body {
   margin: 0;
   font-family: "MEK Sans", sans-serif;
 }
+
+.header {
+    pointer-events: none;
+    z-index: 9997;
+    position:fixed;
+    height: 200px;
+    top:30px;
+    width:100%;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: #1a1a1ae6;
+}
+
+.brand {
+    pointer-events: none;
+    z-index: 9998;
+    position: fixed;
+    top: 50px;
+    width: min(650px, calc(100% - 30px));
+    height: 120px;
+    transform: translate(-50%);
+    border: 2px solid #aaa;
+    left: 50%;
+}
+
+.nav {
+    z-index: 9999;
+    position: fixed;
+    top: 180px;
+    width: min(650px, calc(100% - 30px));
+    height: 28px;
+    background-color: rgb(60, 59, 59);
+    border: 2px solid #777;
+    transform: translate(-50%);
+    left: 50%;
+}
