@@ -1,16 +1,17 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "MEK Sans";
-  src: url("/fonts/MEKSans-Regular.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+    font-family: "MEK Sans";
+    src: url("/fonts/MEKSans-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 body {
-  margin: 0;
-  font-family: "MEK Sans", sans-serif;
+    background: #181818;
+    margin: 0;
+    font-family: "MEK Sans", sans-serif;
 }
 
 .header {
@@ -29,9 +30,12 @@ body {
 }
 
 .brand {
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    display: block;
     pointer-events: none;
     z-index: 9998;
-    position: fixed;
     top: 50px;
     width: min(650px, calc(100% - 30px));
     height: 120px;
@@ -41,13 +45,38 @@ body {
 }
 
 .nav {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
     z-index: 9999;
     position: fixed;
     top: 180px;
     width: min(650px, calc(100% - 30px));
     height: 28px;
-    background-color: rgb(60, 59, 59);
+    background-color: #111;
     border: 2px solid #777;
     transform: translate(-50%);
     left: 50%;
+}
+
+.active {
+    color: #fff;
+    transition-duration: .1s;
+    filter: drop-shadow(0 0 5px #fffc);
+}
+
+.link {
+    color: #777;
+    cursor: pointer;
+    filter: drop-shadow(0 0 5px #fff0);
+    height: 100%;
+    padding: 2px 10px;
+    display: inline-block;
+    position: relative;
+}
+
+.link:hover {
+    transition-duration: .1s;
+    color: #999;
 }
