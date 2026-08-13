@@ -31,8 +31,6 @@ body {
 
 .brand {
     position: fixed;
-    align-items: center;
-    justify-content: center;
     display: block;
     pointer-events: none;
     z-index: 9998;
@@ -52,14 +50,12 @@ body {
     top: 50%;
     left: calc(50% - 0.5px);
     transform: translate(-50%, -50%);
+    height: 60px;
 }
 
 .nav {
     text-align: center;
     display: block;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
     z-index: 9999;
     position: fixed;
     top: 180px;
