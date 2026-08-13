@@ -8,6 +8,14 @@
     font-display: swap;
 }
 
+@font-face {
+  font-family: "VA-11 Hall-A";
+  src: url("/fonts/va11halla.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
     background: #181818;
     margin: 0;
@@ -43,6 +51,11 @@ body {
 }
 
 .raz {
+    font-family: "VA-11 Hall-A", sans-serif;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    line-height: 60px;
     color: white;
     filter: drop-shadow(rgba(255, 255, 255, 0.5) 0px 0px 10px);
     opacity: 0.9;
@@ -50,7 +63,6 @@ body {
     top: 50%;
     left: calc(50% - 0.5px);
     transform: translate(-50%, -50%);
-    height: 60px;
 }
 
 .nav {

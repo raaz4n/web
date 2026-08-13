@@ -31,7 +31,7 @@ export default function Header() {
 
             const logo = logoRef.current;
             if (logo) {
-                logo.style.height = `${lerp(60, 48, progress)}px`;
+                logo.style.fontSize = `${lerp(80, 60, progress)}px`;
             }
 
             const nav = navRef.current;
