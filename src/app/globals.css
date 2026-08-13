@@ -63,7 +63,7 @@ body {
     height: 28px;
     background-color: #111;
     border: 2px solid #777;
-    transform: translate(-50%);
+    transform: translateX(-50%);
     left: 50%;
     overflow: hidden;
 }
