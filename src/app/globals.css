@@ -44,7 +44,18 @@ body {
     left: 50%;
 }
 
+.raz {
+    color: white;
+    filter: drop-shadow(rgba(255, 255, 255, 0.5) 0px 0px 10px);
+    opacity: 0.9;
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 0.5px);
+    transform: translate(-50%, -50%);
+}
+
 .nav {
+    text-align: center;
     display: block;
     justify-content: center;
     align-items: center;
@@ -58,6 +69,7 @@ body {
     border: 2px solid #777;
     transform: translate(-50%);
     left: 50%;
+    overflow: hidden;
 }
 
 .active {
@@ -67,6 +79,8 @@ body {
 }
 
 .link {
+    overflow: hidden;
+    margin: 0 30px;
     color: #777;
     cursor: pointer;
     filter: drop-shadow(0 0 5px #fff0);
@@ -74,6 +88,7 @@ body {
     padding: 2px 10px;
     display: inline-block;
     position: relative;
+    transition-duration: 1s;
 }
 
 .link:hover {

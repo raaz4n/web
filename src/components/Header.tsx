@@ -3,16 +3,13 @@
         <div className="overlay"></div>
     </header>
     <div className="brand">
-        <>
+        <div className="raz">
             raaz4n
-        </>
+        </div>
     </div>
     <div className="nav">
         <div className="link">
             ~/
-        </div>
-        <div className="link">
-            ~/about
         </div>
         <div className="link">
             ~/blog
