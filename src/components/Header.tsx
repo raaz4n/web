@@ -129,7 +129,7 @@ export default function Header() {
             <div className="top">
                 <div className="ticker">
                     <div className="tickerTrack">
-                        {[...QUOTES, ...QUOTES, ...QUOTES, ...QUOTES, ...QUOTES].map((quote, i) => (
+                        {[...QUOTES, ...QUOTES, ...QUOTES, ...QUOTES, ...QUOTES, ...QUOTES].map((quote, i) => (
                             <span key={i} className="tickerQuote">
                                 {quote.parts.map((part, j) => (
                                 <span key={j} style={{ color: part.color }}>
