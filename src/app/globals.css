@@ -36,6 +36,29 @@ body {
     color: #999 !important;
 }
 
+.ticker {
+    overflow: hidden;
+}
+
+.tickerTrack {
+    display: flex;
+    white-space: nowrap;
+    width: max-content;
+    animation: ticker 40s linear infinite;
+    will-change: transform;
+}
+
+.tickerSep {
+    margin: 0 10rem;
+}
+
+@keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.top:hover .tickerTrack { animation-play-state: paused; }
+
 .header {
     pointer-events: none;
     height: 200px;
@@ -86,9 +109,10 @@ body {
     display: block;
     z-index: 9999;
     position: fixed;
+    font-size: 17px;
     top: 180px;
     width: min(650px, calc(100% - 30px));
-    height: 28px;
+    height: 30px;
     background-color: #111;
     border: 2px solid #777;
     transform: translateX(-50%);

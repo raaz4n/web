@@ -1,6 +1,11 @@
 "use client"
 import { useEffect, useRef } from "react";
 
+const QUOTES = [
+    { text: "sky", color: "#999" },
+    { text: "blue", color: "blue" }
+];
+
 export default function Header() {
     const headerRef = useRef<HTMLElement>(null);
     const brandRef = useRef<HTMLDivElement>(null);
@@ -94,6 +99,16 @@ export default function Header() {
     return (
         <>
             <div className="top">
+                <div className="ticker">
+                    <div className="tickerTrack">
+                        {[...QUOTES, ...QUOTES].map((quote: { text: string; color: string }, i) => (
+                            <span key={i} className="tickerQuote" style={{color: quote.color}}>
+                                {quote.text}
+                                <span className="tickerSep">?</span>
+                            </span>
+                        ))}
+                    </div>
+                </div>
             </div>
             <header className="header" ref={headerRef}>
                 <div className="overlay"></div>
