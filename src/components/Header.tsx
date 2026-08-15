@@ -2,8 +2,18 @@
 import { useEffect, useRef } from "react";
 
 const QUOTES = [
-    { text: "sky", color: "#999" },
-    { text: "blue", color: "blue" }
+    {
+        parts: [
+            { text: "the sky is ", color: "white" },
+            { text: "blue", color: "blue" },
+        ],
+    },
+    {
+        parts: [
+            { text: "base", color: "red" },
+            { text: "64", color: "green" },
+        ],
+    },
 ];
 
 export default function Header() {
@@ -101,12 +111,16 @@ export default function Header() {
             <div className="top">
                 <div className="ticker">
                     <div className="tickerTrack">
-                        {[...QUOTES, ...QUOTES].map((quote: { text: string; color: string }, i) => (
-                            <span key={i} className="tickerQuote" style={{color: quote.color}}>
-                                {quote.text}
-                                <span className="tickerSep">?</span>
+                        {[...QUOTES, ...QUOTES, ...QUOTES, ...QUOTES, ...QUOTES, ...QUOTES, ...QUOTES].map((quote, i) => (
+                            <span key={i} className="tickerQuote">
+                                {quote.parts.map((part, j) => (
+                                <span key={j} style={{ color: part.color }}>
+                                    {part.text}
+                                </span>
+                                ))}
+                                <span className="tickerSep">~</span>
                             </span>
-                        ))}
+                            ))}
                     </div>
                 </div>
             </div>
