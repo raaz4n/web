@@ -48,6 +48,10 @@ body {
     will-change: transform;
 }
 
+.tickerQuote {
+    font-size: 18px;
+}
+
 .tickerSep {
     margin: 0 10rem;
 }

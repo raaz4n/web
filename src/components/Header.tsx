@@ -4,15 +4,23 @@ import { useEffect, useRef } from "react";
 const QUOTES = [
     {
         parts: [
-            { text: "the sky is ", color: "white" },
-            { text: "blue", color: "blue" },
+            { text: 'Time to mix drinks and change lives.', color: "#B32F6C" },
         ],
     },
     {
         parts: [
-            { text: "base", color: "red" },
-            { text: "64", color: "green" },
+            { text: "The best part of working close is you get to hear every beautiful sound.", color: "red" },
         ],
+    },
+    {
+        parts: [
+            { text: "You thought you were better than me?!", color: "orange" },
+        ]
+    },
+    {
+        parts: [
+            { text: "A MAN'S DREAM... WILL NEVER DIE!", color: "white" },
+        ]
     },
 ];
 
@@ -111,7 +119,7 @@ export default function Header() {
             <div className="top">
                 <div className="ticker">
                     <div className="tickerTrack">
-                        {[...QUOTES, ...QUOTES, ...QUOTES, ...QUOTES, ...QUOTES, ...QUOTES, ...QUOTES].map((quote, i) => (
+                        {[...QUOTES, ...QUOTES, ...QUOTES, ...QUOTES, ...QUOTES].map((quote, i) => (
                             <span key={i} className="tickerQuote">
                                 {quote.parts.map((part, j) => (
                                 <span key={j} style={{ color: part.color }}>
