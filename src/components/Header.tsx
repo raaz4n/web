@@ -19,7 +19,17 @@ const QUOTES = [
     },
     {
         parts: [
-            { text: "A MAN'S DREAM... WILL NEVER DIE!", color: "white" },
+            { text: "A MAN'S DREAM... WILL NEVER DIE!", color: "gold" },
+        ]
+    },
+    {
+        parts: [
+            { text: "Let's make this right as rain.", color: "#5655b8" },
+        ]
+    },
+    {
+        parts: [
+            { text: "Guardians make their own fate.", color: "white" },
         ]
     },
 ];

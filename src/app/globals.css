@@ -44,7 +44,7 @@ body {
     display: flex;
     white-space: nowrap;
     width: max-content;
-    animation: ticker 40s linear infinite;
+    animation: ticker 25s linear infinite;
     will-change: transform;
 }
 
@@ -58,7 +58,7 @@ body {
 
 @keyframes ticker {
     from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    to { transform: translateX(-16.66666666666667%); }
 }
 
 .top:hover .tickerTrack { animation-play-state: paused; }
