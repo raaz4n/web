@@ -9,64 +9,82 @@ export default function Header() {
 
     useEffect(() => {
         let target = 0;
-        let current = 0;
+        let slow = 0;
+        let mid = 0;
+        let fast = 0;
+
         let raf: number | null = null;
+        let last: number | null = null;
+        let isMobile = window.innerWidth <= 1000;
         const lerp = (from: number, to: number, t: number) => from + (to - from) * t;
 
         const handleScroll = () => {
-            target = Math.min(1, window.scrollY / 100);
+            target = isMobile ? 1 : Math.min(1, window.scrollY / 100);
 
             if (raf === null) {
                 raf = requestAnimationFrame(tick);
             }
         };
 
-        let last: number | null = null;
+        const onResize = () => {
+            isMobile = window.innerWidth <= 1000;
+            handleScroll();
+        };
 
         const tick = (now: number) => {
             const dt = last ? (now - last) / 1000 : 1 / 60;
             last = now;
-            current += (target - current) * (1 - Math.exp(-10 * dt));
+            
+            slow += (target - slow) * (1 - Math.exp(-8 * dt));
+            mid += (target - mid) * (1 - Math.exp(-10 * dt));
+            fast += (target - fast) * (1 - Math.exp(-12 * dt));
 
             const header = headerRef.current;
             if (header) {
-                header.style.height = `${lerp(200, 130, current)}px`;
-                header.style.transform = `translateY(${lerp(0, -30, current)}px)`;
+                header.style.height = `${lerp(200, 130, slow)}px`;
+                header.style.transform = `translateY(${lerp(0, -30, slow)}px)`;
             }
 
             const brand = brandRef.current;
             if (brand) {
-                brand.style.height = `${lerp(120, 70, current)}px`;
-                brand.style.transform = `translateX(-50%) translateY(${lerp(0, -40, current)}px)`;
-                brand.style.width = `min(${lerp(650, 1000, current)}px, 100% - 30px)`;
+                brand.style.height = `${lerp(120, 70, fast)}px`;
+                brand.style.transform = `translateX(-50%) translateY(${lerp(0, -40, fast)}px)`;
+                brand.style.width = `min(${lerp(650, 1000, fast)}px, 100% - 30px)`;
             }
 
             const logo = logoRef.current;
             if (logo) {
-                logo.style.fontSize = `${lerp(80, 60, current)}px`;
+                logo.style.fontSize = `${lerp(80, 60, mid)}px`;
             }
 
             const nav = navRef.current;
             if (nav) {
-                nav.style.width = `min(${lerp(650, 1000, current)}px, 100% - 30px)`;
-                nav.style.transform = `translateX(-50%) translateY(${lerp(0, -90, current)}px)`;
+                nav.style.width = `min(${lerp(650, 1000, mid)}px, 100% - 30px)`;
+                nav.style.transform = `translateX(-50%) translateY(${lerp(0, -90, mid)}px)`;
             }
 
-            if (Math.abs(target - current) > 0.001) {
+            const settled =
+                Math.abs(target - slow) < 0.001 &&
+                Math.abs(target - mid) < 0.001 &&
+                Math.abs(target - fast) < 0.001;
+
+            if (!settled) {
                 raf = requestAnimationFrame(tick);
             }
             else {
-                current = target;
+                slow = mid = fast = target;
                 raf = null;
-                last = null
+                last = null;
             }
         };
 
         handleScroll();
         window.addEventListener("scroll", handleScroll, { passive: true});
+        window.addEventListener("resize", onResize);
 
         return () => {
             window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("resize", onResize);
             if (raf !== null) {
                 cancelAnimationFrame(raf);
             }
