@@ -47,6 +47,8 @@ export default function Header() {
 
     return (
         <>
+            <div className="top">
+            </div>
             <header className="header" ref={headerRef}>
                 <div className="overlay"></div>
             </header>

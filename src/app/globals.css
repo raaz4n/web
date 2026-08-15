@@ -19,16 +19,33 @@
 body {
     background: #181818;
     margin: 0;
-    font-family: "MEK Sans", sans-serif;
+    font-family: "VA-11 Hall-A", sans-serif;
+}
+
+.top {
+    z-index: 999;
+    background: #111;
+    border-bottom: 2px solid #777;
+    width: 100vw;
+    height: 30px;
+    padding-top: 2px;
+    padding-left: 10px;
+    display: block;
+    position: fixed;
+    top: 0;
+    color: #999 !important;
 }
 
 .header {
     pointer-events: none;
-    z-index: 9997;
-    position:fixed;
     height: 200px;
-    top:30px;
-    width:100%;
+    z-index: 9999;
+    position: fixed;
+    background: #1a1a1a;
+    top: 30px;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 40px #00000080;
 }
 
 .overlay {
@@ -41,7 +58,7 @@ body {
     position: fixed;
     display: block;
     pointer-events: none;
-    z-index: 9998;
+    z-index: 9999;
     top: 50px;
     width: min(650px, calc(100% - 30px));
     height: 120px;
@@ -51,7 +68,7 @@ body {
 }
 
 .raz {
-    font-family: "VA-11 Hall-A", sans-serif;
+    font-family: "MEK Sans", sans-serif;
     align-items: center;
     justify-content: center;
     font-size: 80px;
