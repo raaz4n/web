@@ -170,3 +170,50 @@ body {
     transition-duration: .1s;
     color: #999;
 }
+
+.main {
+    width: 100%;
+    padding-top: 270px;
+    position: relative;
+    overflow: hidden;
+}
+
+.main > section {
+    min-height: calc(100vh - 200px);
+    position: relative;
+}
+
+@media (width <= 1000px) {
+    .main { padding-top: 160px; }
+}
+
+.col {
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 40px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50);
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    min-height: calc(100vh - 200px);
+}
+
+.artpiece {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.artpiece img {
+    height: min(calc(100svh - 270px), 760px);
+    width: auto;
+    object-fit: contain;
+    object-position: right bottom;
+    image-rendering: pixelated;
+}

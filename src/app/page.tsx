@@ -1,9 +1,14 @@
 export default function Home() {
   return (
     <main className="main">
-        <section className="h-screen bg-neutral-800" />
-        <section className="h-screen bg-neutral-900" />
-        <section className="h-screen bg-neutral-800" />
+        <section className="hero">
+            <div className="col">
+
+            </div>
+            <div className="artpiece">
+                <img className="artpiece-img" src="/photos/missingno.gif" alt="" />
+            </div>
+        </section>
     </main>
   );
 }
