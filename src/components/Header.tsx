@@ -146,6 +146,12 @@ export default function Header() {
                 <div className="overlay"></div>
             </header>
             <div className="brand" ref={brandRef}>
+                <div className="brand-bg">
+                    <div className="brand-bg-track">
+                        <img src="/photos/Number_World.png" alt="" />
+                        <img src="/photos/Number_World.png" alt="" />
+                    </div>
+                </div>
                 <div className="raz" ref={logoRef}>
                     raaz4n
                 </div>

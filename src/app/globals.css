@@ -68,8 +68,8 @@ body {
     height: 200px;
     z-index: 9999;
     position: fixed;
-    background: url("/photos/madot.png") 50% / 100%;
-    background-position-y: 78%;
+    background: url("/photos/scene.png") 100% / 140%;
+    background-position-y: 36%;
     top: 30px;
     left: 0;
     right: 0;
@@ -92,6 +92,28 @@ body {
     transform: translate(-50%);
     border: 2px solid #aaa;
     left: 50%;
+}
+
+.brand-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.brand-bg-track {
+    opacity: 1;
+    display: flex;
+    width: max-content;
+    animation: brand-slide 30s linear infinite;
+}
+
+.brand-bg img {
+    transform: translateY(-165px);
+}
+
+@keyframes brand-slide {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
 }
 
 .raz {
