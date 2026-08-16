@@ -68,7 +68,8 @@ body {
     height: 200px;
     z-index: 9999;
     position: fixed;
-    background: #1a1a1a;
+    background: url("/photos/madot.png") 50% / 100%;
+    background-position-y: 78%;
     top: 30px;
     left: 0;
     right: 0;
