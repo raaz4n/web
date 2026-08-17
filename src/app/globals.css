@@ -17,13 +17,61 @@
 }
 
 body {
-    background: #181818;
+    background: var(--bg);
     margin: 0;
     font-family: "MEK Sans", sans-serif;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-:root { 
+:root {
+    color-scheme: dark;
+    --bg: rgb(21, 21, 21);
+    --olay: #181818ec;
     --text: #ddd;
+    --text-strong: #fff;
+    --text-dim: #999;
+    --cream: #feffd3;
+}
+
+html[data-theme="light"] {
+    color-scheme: light;
+    --bg: #e0e0e0;
+    --olay: #f5f5f5e6;
+    --text: #222;
+    --text-strong: #000;
+    --text-dim: #666;
+    --cream: #01002C;
+}
+
+.theme-btn {
+    transition: background-color 0.4s ease, color 0.4s ease;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    color: var(--text-strong);
+    border: 2px solid var(--text-dim);
+    cursor: pointer;
+    width: 48px;
+    aspect-ratio: 1;
+    padding: 0;
+}
+
+.theme-btn .sun {
+    position: absolute;
+    opacity: 0;
+}
+
+.theme-btn.light .sun {
+    opacity: 1;
+}
+
+.theme-btn.light .moon {
+    opacity: 0;
 }
 
 .top {
@@ -203,6 +251,7 @@ body {
 }
 
 .start {
+    transition: background-color 0.4s ease, color 0.4s ease;
     padding: 0;
     overflow: hidden;
     justify-content: flex-end;
@@ -210,7 +259,7 @@ body {
     flex-direction: column;
     box-sizing: border-box;
     position: relative;
-    background: url("/photos/dreamdiary.png") 50% / 100%;
+    background: var(--bg);
     --welcome-banner-height: 36px;
     --welcome-top-offset: 230px;
     --welcome-section-height: calc(100dvh - 230px);
@@ -220,7 +269,6 @@ body {
     z-index: 40;
     box-shadow: none;
     isolation: isolate;
-    background: var(--main-bg);
     color: var(--text);
     border: none;
     margin: 0;
@@ -249,9 +297,10 @@ body {
 }
 
 .welcome-overlay {
+    transition: background-color 0.4s ease, color 0.4s ease;
     position: absolute;
     inset: 0;
-    background: #181818ec;
+    background: var(--olay);
     pointer-events: none;
 }
 
@@ -266,10 +315,10 @@ body {
 }
 
 .welcome-text {
+    transition: background-color 0.4s ease, color 0.4s ease;
     text-align: left;
     max-width: 37.5rem;
     width: 100%;
-    color: var(--text);
     background: 0 0;
     transform: none;
     user-select: text;
@@ -285,6 +334,22 @@ body {
     text-decoration: none;
     box-sizing: border-box;
     line-height: 1.25;
+}
+
+.welcome-title {
+    transition: background-color 0.4s ease, color 0.4s ease;
+    color: var(--text-strong);
+    text-shadow: 0 -96px 0 #ffffff02, 0 -43px 0 #ffffff05, 0 -11px 0 #ffffff08,
+               0 12px 0 #ffffff08, 0 46px 0 #ffffff05, 0 100px 0 #ffffff02;
+    filter: drop-shadow(0 2px 0 #ffffff57) drop-shadow(0 0 3px #fff6)
+          drop-shadow(0 0 10px #ffffff4d);
+}
+
+html[data-theme="light"] .welcome-title {
+    text-shadow: 0 -96px 0 #00000002, 0 -43px 0 #00000005, 0 -11px 0 #00000008,
+                0 12px 0 #00000008, 0 46px 0 #00000005, 0 100px 0 #00000002;
+    filter: drop-shadow(0 2px 0 #00000057) drop-shadow(0 0 3px #0006)
+            drop-shadow(0 0 10px #0000004d);
 }
 
 .artpiece {
