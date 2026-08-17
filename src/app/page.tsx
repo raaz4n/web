@@ -1,3 +1,5 @@
+import DitherStrip from "@/components/DitherStrip";
+
 export default function Home() {
   return (
     <main className="main">
@@ -15,7 +17,7 @@ export default function Home() {
                             reverse engineering, pentesting, scripting, and building.
                         </p>
                         <p className="min-h-42px italic" style={{ color: 'var(--text-dim)'}}>
-                            security researcher • CS @  <span style={{ color: '#005cba' }}>mtsu</span>
+                            security researcher • cs @  <span style={{ color: '#005cba' }}>mtsu</span>
                         </p>
                     </article>
                 </div>
@@ -26,6 +28,38 @@ export default function Home() {
                 </div>
             </div>
         </section>
+        <section className="section dark" style={{ "--section-z": 39, borderTop: '2px solid #777' } as React.CSSProperties}>
+            <div className="section-inner">
+                <div className="section-copy-wrap">
+                    <article className="section-copy">
+                        <h1>Who am I?</h1>
+                        <p>Hi there! My name's Raazan (I also go by <span>raaz4n</span> online).</p>
+                        <p>I'm a security researcher currently studying at <span style={{ color: '#005cba' }}>MTSU</span>.</p>
+                        <p>On this website, you'll find my blog posts, art, and projects.</p>
+                    </article>
+                </div>
+                <div className="section-stage" aria-hidden="true">
+                    <img src="/photos/pexels-tu-nguyen.png" />
+                </div>
+            </div>
+        </section>
+        <DitherStrip height={56} />
+        <section className="section light flip" style={{ "--section-z": 39 } as React.CSSProperties}>
+            <div className="section-inner">
+                <div className="section-copy-wrap">
+                    <article className="section-copy">
+                        <h1>What do I do?</h1>
+                        <p>test</p>
+                        <p>test</p>
+                        <p>test</p>
+                    </article>
+                </div>
+                <div className="section-stage" aria-hidden="true">
+                    <img src="/photos/g.png" />
+                </div>
+            </div>
+        </section>
+        <DitherStrip height={56} flip reverse />
     </main>
   );
 }

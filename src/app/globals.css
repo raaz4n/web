@@ -32,6 +32,33 @@ body {
     --text-strong: #fff;
     --text-dim: #999;
     --cream: #feffd3;
+    --tone-dark: rgb(21, 21, 21);
+    --tone-dark-text: #ddd;
+    --tone-light: rgb(230, 230, 230);
+    --tone-light-text: #222;
+    --dither-dark-from: rgb(230, 230, 230);
+    --dither-dark-to: rgb(21, 21, 21);
+    --dither-light-from: rgb(21, 21, 21);
+    --dither-light-to: rgb(230, 230, 230);
+    --glow-on-dark:
+    0 -96px 0 #ffffff02, 0 -43px 0 #ffffff05, 0 -11px 0 #ffffff08,
+    0 12px 0 #ffffff08, 0 46px 0 #ffffff05, 0 100px 0 #ffffff02;
+    --glow-filter-on-dark:
+    drop-shadow(0 2px 0 #ffffff57) drop-shadow(0 0 3px #fff6) drop-shadow(0 0 10px #ffffff4d);
+    --glow-on-light:
+    0 -96px 0 #00000002, 0 -43px 0 #00000005, 0 -11px 0 #00000008,
+    0 12px 0 #00000008, 0 46px 0 #00000005, 0 100px 0 #00000002;
+    --glow-filter-on-light:
+    drop-shadow(0 2px 0 #00000057) drop-shadow(0 0 3px #0006) drop-shadow(0 0 10px #0000004d);
+}
+
+.dither-b {
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+html[data-theme="light"] .dither-b {
+    opacity: 1;
 }
 
 html[data-theme="light"] {
@@ -42,6 +69,22 @@ html[data-theme="light"] {
     --text-strong: #000;
     --text-dim: #666;
     --cream: #01002C;
+    --tone-dark: rgb(230, 230, 230);
+    --tone-dark-text: #222;
+    --tone-light: rgb(21, 21, 21);
+    --tone-light-text: #ddd;
+}
+
+html[data-theme="light"] .section.light .section-copy h1 {
+  color: #fff;
+  text-shadow: var(--glow-on-dark);
+  filter: var(--glow-filter-on-dark);
+}
+
+html[data-theme="light"] .section.light .section-copy h1::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent 70%);
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .theme-btn {
@@ -233,11 +276,6 @@ html[data-theme="light"] {
     overflow: hidden;
 }
 
-.main > section {
-    min-height: calc(100vh - 200px);
-    position: relative;
-}
-
 @media (width <= 1000px) {
     .main { padding-top: 160px; }
 }
@@ -285,7 +323,7 @@ html[data-theme="light"] {
     content: "";
     position: absolute;
     inset: 0;
-    background: url("/photos/whitedesertA.png") 80% 90% / 110% no-repeat;
+    background: url("/photos/whitedesertA.png") 60% 90% / 110% no-repeat;
     opacity: 0;
     transition: opacity 0.8s ease;
     pointer-events: none;
@@ -398,6 +436,10 @@ html[data-theme="light"] .welcome-title {
         margin-left: -60px;
         margin-right: -160px;
     }
+
+    .section-copy {
+        padding: 28px;
+    }
 }
 
 .artpiece-img {
@@ -407,4 +449,159 @@ html[data-theme="light"] .welcome-title {
     object-fit: contain;
     object-position: right bottom;
     image-rendering: pixelated;
+}
+
+.section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    min-height: 371.25px;
+    padding: 0;
+    z-index: var(--section-z, auto);
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.section.dark {
+    background: var(--tone-dark);
+    color: var(--tone-dark-text);
+}
+
+.section.dark .section-copy h1 {
+    color: #fff;
+    text-shadow: var(--glow-on-dark);
+    filter: var(--glow-filter-on-dark);
+}
+
+.section.light {
+    background: var(--tone-light);
+    color: var(--tone-light-text);
+}
+
+.section.light .section-copy h1 {
+    color: #111;
+    text-shadow: var(--glow-on-light);
+    filter: var(--glow-filter-on-light);
+}
+
+html[data-theme="light"] .section.dark .section-copy h1 {
+    color: #111;
+    text-shadow: var(--glow-on-light);
+    filter: var(--glow-filter-on-light);
+}
+
+.section-inner {
+    position: relative;
+    z-index: 4;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.section-copy {
+    position: relative;
+    z-index: 4;
+    width: 100%;
+    max-width: none;
+    text-align: left;
+    padding: 16px;
+}
+
+.section-copy h1 {
+    position: relative;
+    font-size: 64px;
+    line-height: 1;
+    font-weight: normal;
+    margin: 0 0 1rem;
+}
+
+.section-copy p {
+    font-size: 20px;
+}
+
+.section-copy h1::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: scaleY(-1);
+    opacity: 0.35;
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent 70%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.section.light .section-copy h1::after,
+html[data-theme="light"] .section.dark .section-copy h1::after {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent 70%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.section-copy-wrap {
+    margin-right: auto;
+    text-align: left;
+    flex: 1;
+    width: 100%;
+    max-width: none;
+}
+
+.section-stage {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+    height: 150%;
+    aspect-ratio: 1;
+    max-width: 40vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-stage img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+.section.flip .section-copy-wrap {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.section.flip .section-stage {
+  left: 40px;
+  right: auto;
+}
+
+@media (min-width: 768px) {
+    .section-inner {
+        max-width: 1280px;
+        padding: 48px 20px;
+        flex-direction: row;
+        gap: 64px;
+    }
+
+    .section-copy {
+        max-width: 620px;
+    }
+
+    .section-copy-wrap {
+        width: auto;
+        max-width: 620px;
+    }
+
+    .section-stage {
+        display: flex;
+    }
 }
