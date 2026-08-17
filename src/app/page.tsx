@@ -33,7 +33,7 @@ export default function Home() {
                 <div className="section-copy-wrap">
                     <article className="section-copy">
                         <h1>Who am I?</h1>
-                        <p>Hi there! My name's Raazan (I also go by <span>raaz4n</span> online).</p>
+                        <p>Hi there! My name's Raazan (I also go by <span style={{ fontFamily: 'LythMono', fontSize: '18px'}}>raaz4n</span> online).</p>
                         <p>I'm a security researcher currently studying at <span style={{ color: '#005cba' }}>MTSU</span>.</p>
                         <p>On this website, you'll find my blog posts, art, and projects.</p>
                     </article>
@@ -49,13 +49,13 @@ export default function Home() {
                 <div className="section-copy-wrap">
                     <article className="section-copy">
                         <h1>What do I do?</h1>
-                        <p>test</p>
-                        <p>test</p>
-                        <p>test</p>
+                        <p>I reverse engineer mobile and desktop applications, do penetration testing on servers and websites,</p>
+                        <p>develop scripts, and also build my own apps.</p>
+                        <p>Some hobbies of mine include gaming, reading, running, and drawing.</p>
                     </article>
                 </div>
                 <div className="section-stage" aria-hidden="true">
-                    <img src="/photos/g.png" />
+                    <img src="/photos/skyisland.png" />
                 </div>
             </div>
         </section>
