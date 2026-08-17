@@ -25,6 +25,7 @@ body {
 
 :root {
     color-scheme: dark;
+    --start-bg: url("/photos/dark.png");
     --bg: rgb(21, 21, 21);
     --olay: #181818ec;
     --text: #ddd;
@@ -259,7 +260,7 @@ html[data-theme="light"] {
     flex-direction: column;
     box-sizing: border-box;
     position: relative;
-    background: var(--bg);
+    background: var(--start-bg) 50% / 100% no-repeat;
     --welcome-banner-height: 36px;
     --welcome-top-offset: 230px;
     --welcome-section-height: calc(100dvh - 230px);
@@ -278,6 +279,21 @@ html[data-theme="light"] {
     font-weight: normal;
     font-style: normal;
     text-align: left;
+}
+
+.start::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("/photos/whitedesertA.png") 80% 90% / 110% no-repeat;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+}
+
+html[data-theme="light"] .start::before {
+    opacity: 1;
+    transition: opacity 0.8s ease;
 }
 
 .welcome {

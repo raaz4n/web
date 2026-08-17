@@ -2,6 +2,7 @@ export default function Home() {
   return (
     <main className="main">
         <section className="start">
+            <div className="welcome-overlay"/>
             <div className="welcome">
                 <div className="welcome-text-block">
                     <article className="welcome-text">
