@@ -269,12 +269,6 @@ html[data-theme="light"] .section.light .section-copy h1::after {
     overflow: hidden;
 }
 
-.active {
-    color: #fff;
-    transition-duration: .1s;
-    filter: drop-shadow(0 0 5px #fffc);
-}
-
 .link {
     overflow: hidden;
     margin: 0 30px;
@@ -286,6 +280,13 @@ html[data-theme="light"] .section.light .section-copy h1::after {
     display: inline-block;
     position: relative;
     transition-duration: 1s;
+}
+
+
+.link.active {
+    color: #fff;
+    transition-duration: .1s;
+    filter: drop-shadow(0 0 5px #fffc);
 }
 
 .link:hover {

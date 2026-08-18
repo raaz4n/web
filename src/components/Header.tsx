@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 
 const QUOTES = [
     {
@@ -34,11 +35,19 @@ const QUOTES = [
     },
 ];
 
+const LINKS = [
+  { href: "/", label: "~/" },
+  { href: "/blog", label: "~/blog" },
+  { href: "/art", label: "~/art" },
+  { href: "/projects", label: "~/projects" },
+];
+
 export default function Header() {
     const headerRef = useRef<HTMLElement>(null);
     const brandRef = useRef<HTMLDivElement>(null);
     const logoRef = useRef<HTMLDivElement>(null);
     const navRef = useRef<HTMLDivElement>(null);
+    const pathname = usePathname();
 
     useEffect(() => {
         let target = 0;
@@ -157,18 +166,15 @@ export default function Header() {
                 </div>
             </div>
             <div className="nav" ref={navRef}>
-                <div className="link">
-                    ~/
-                </div>
-                <div className="link">
-                    ~/blog
-                </div>
-                <div className="link">
-                    ~/art
-                </div>
-                <div className="link">
-                    ~/projects
-                </div>
+                {LINKS.map((link) => (
+                <a
+                    key={link.href}
+                    href={link.href}
+                    className={`link ${pathname === link.href ? "active" : ""}`}
+                >
+                    {link.label}
+                </a>
+                ))}
             </div>
         </>
     )
