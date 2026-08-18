@@ -282,7 +282,6 @@ html[data-theme="light"] .section.light .section-copy h1::after {
     transition-duration: 1s;
 }
 
-
 .link.active {
     color: #fff;
     transition-duration: .1s;
