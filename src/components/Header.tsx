@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const QUOTES = [
     {
@@ -37,6 +38,7 @@ const QUOTES = [
 
 const LINKS = [
   { href: "/", label: "~/" },
+  { href: "/about", label: "~/about"},
   { href: "/blog", label: "~/blog" },
   { href: "/art", label: "~/art" },
   { href: "/projects", label: "~/projects" },
@@ -167,13 +169,13 @@ export default function Header() {
             </div>
             <div className="nav" ref={navRef}>
                 {LINKS.map((link) => (
-                <a
+                <Link
                     key={link.href}
                     href={link.href}
                     className={`link ${pathname === link.href ? "active" : ""}`}
                 >
                     {link.label}
-                </a>
+                </Link>
                 ))}
             </div>
         </>

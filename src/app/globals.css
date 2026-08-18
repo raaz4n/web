@@ -9,35 +9,43 @@
 }
 
 @font-face {
-  font-family: "VA-11 Hall-A";
-  src: url("/fonts/va11halla.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+    font-family: "VA-11 Hall-A";
+    src: url("/fonts/va11halla.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "LythMono";
-  src: url("/fonts/LythMono-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+    font-family: "LythMono";
+    src: url("/fonts/LythMono-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "LythMono";
-  src: url("/fonts/LythMono-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+    font-family: "LythMono";
+    src: url("/fonts/LythMono-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "LythMono";
-  src: url("/fonts/LythMono-Italic.woff2") format("woff2");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
+    font-family: "LythMono";
+    src: url("/fonts/LythMono-Italic.woff2") format("woff2");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "LythMono NF";
+    src: url("/fonts/LythMonoNerdFont-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 body {
@@ -56,6 +64,8 @@ body {
     --text-strong: #fff;
     --text-dim: #999;
     --cream: #feffd3;
+    --interests: #d2dcb6;
+    --resume: rgb(248, 248, 2);
     --tone-dark: rgb(21, 21, 21);
     --tone-dark-text: #ddd;
     --tone-light: rgb(230, 230, 230);
@@ -93,6 +103,8 @@ html[data-theme="light"] {
     --text-strong: #000;
     --text-dim: #666;
     --cream: #01002C;
+    --interests: #c52626;
+    --resume: rgb(110, 24, 110);
     --tone-dark: rgb(230, 230, 230);
     --tone-dark-text: #222;
     --tone-light: rgb(21, 21, 21);
@@ -100,15 +112,15 @@ html[data-theme="light"] {
 }
 
 html[data-theme="light"] .section.light .section-copy h1 {
-  color: #fff;
-  text-shadow: var(--glow-on-dark);
-  filter: var(--glow-filter-on-dark);
+    color: #fff;
+    text-shadow: var(--glow-on-dark);
+    filter: var(--glow-filter-on-dark);
 }
 
 html[data-theme="light"] .section.light .section-copy h1::after {
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent 70%);
-  -webkit-background-clip: text;
-  background-clip: text;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent 70%);
+    -webkit-background-clip: text;
+    background-clip: text;
 }
 
 .theme-btn {
@@ -271,7 +283,7 @@ html[data-theme="light"] .section.light .section-copy h1::after {
 
 .link {
     overflow: hidden;
-    margin: 0 30px;
+    margin: 0 18px;
     color: #777;
     cursor: pointer;
     filter: drop-shadow(0 0 5px #fff0);
@@ -604,8 +616,8 @@ html[data-theme="light"] .section.dark .section-copy h1::after {
 }
 
 .section.flip .section-stage {
-  left: 40px;
-  right: auto;
+    left: 40px;
+    right: auto;
 }
 
 @media (min-width: 768px) {
@@ -628,4 +640,103 @@ html[data-theme="light"] .section.dark .section-copy h1::after {
     .section-stage {
         display: flex;
     }
+}
+
+.page {
+    font-family: "LythMono";
+    max-width: 1260px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+    box-sizing: border-box;
+}
+
+.page-title {
+    text-align: center;
+    position: relative;
+    font-family: "VA-11 Hall-A";
+    font-size: 64px;
+    line-height: 1;
+    font-weight: normal;
+    color: var(--text-strong);
+    text-shadow: var(--glow-on-dark);
+    filter:var(--glow-filter-on-dark);
+    margin: 0 0 1em;
+}
+
+html[data-theme="light"] .page-title {
+    text-shadow: var(--glow-on-light);
+    filter: var(--glow-filter-on-light);
+}
+
+.page h2 {
+    font-family: "MEK Sans";
+    font-size: 28px;
+    font-weight: normal;
+    color: var(--text-strong);
+    margin: 2em 0 0.8em;
+}
+
+.page p {
+    overflow-wrap: break-word;
+    margin-right: auto;
+    color: var(--text);
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 0 0 1em;
+}
+
+.page a {
+    text-decoration: underline;
+    font-family: "VA-11 Hall-A";
+    font-size: 22px;
+}
+
+.page li span {
+    color: var(--text-strong);
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 48px 20px 56px;
+    box-sizing: border-box;
+    background: var(--tone-dark);
+    color: var(--tone-dark-text);
+    transition: background-color 0.4s ease, color 0.4s ease;
+    font-size: 20px;
+}
+
+.footer-icon {
+    font-family: "LythMono NF", monospace;
+    font-size: 20px;
+    line-height: 1;
+    color: var(--text-dim);
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+
+.footer-links a:hover .footer-icon {
+    color: var(--text-strong);
+}
+
+.footer-quote {
+    margin: 0;
+    font-style: italic;
+    color: var(--text-dim);
+    opacity: 0.6;
 }
