@@ -56,7 +56,7 @@ export default function DitherStrip({
     }, [cell]);
 
     return (
-        <div ref={wrapRef} style={{ height, position: "relative", overflow: "hidden" }} aria-hidden="true">
+        <div ref={wrapRef} className="dither" style={{ height, position: "relative", overflow: "hidden" }} aria-hidden="true">
             <canvas ref={canvasA} className="dither-a"
                 style={{ width: "100%", height: "100%", display: "block", imageRendering: "pixelated" }} />
             <canvas ref={canvasB} className="dither-b"
