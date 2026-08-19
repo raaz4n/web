@@ -1,7 +1,7 @@
 ---
 title: "Aeris"
 date: "2025-11-29"
-tags: [projects, Aeris]
+tags: [projects]
 ---
 
 Since I finished this project about a month before I started building this new website, I unfortunately won't be able to give live insight on how I completed it.

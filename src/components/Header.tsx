@@ -50,6 +50,8 @@ export default function Header() {
     const logoRef = useRef<HTMLDivElement>(null);
     const navRef = useRef<HTMLDivElement>(null);
     const pathname = usePathname();
+    const isActive = (href: string) =>
+        href === "/" ? pathname === "/" : pathname.startsWith(href);
 
     useEffect(() => {
         let target = 0;
@@ -172,7 +174,7 @@ export default function Header() {
                 <Link
                     key={link.href}
                     href={link.href}
-                    className={`link ${pathname === link.href ? "active" : ""}`}
+                    className={`link ${isActive(link.href) ? "active" : ""}`}
                 >
                     {link.label}
                 </Link>

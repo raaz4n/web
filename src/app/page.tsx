@@ -49,13 +49,13 @@ export default function Home() {
                 <div className="section-copy-wrap">
                     <article className="section-copy">
                         <h1>Selected works.</h1>
-                        <p>"project title 1"</p>
-                        <p>"project title 2"</p>
-                        <p>"blog post 1"</p>
+                        <a href="/blog/newweb">New website</a>
+                        <br/>
+                        <a href="/blog/r3turn">r3turn</a>
                     </article>
                 </div>
                 <div className="section-stage" aria-hidden="true">
-                    <img src="/photos/skyisland.png" />
+                    <img src="/photos/placeholder.png" />
                 </div>
             </div>
         </section>

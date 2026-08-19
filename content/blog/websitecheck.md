@@ -1,7 +1,7 @@
 ---
 title: "websiteCheck.py"
 date: "2025-11-29"
-tags: [projects, websiteCheck]
+tags: [projects]
 ---
 
 ## (FINISHED THIS PROJECT IN AUGUST)

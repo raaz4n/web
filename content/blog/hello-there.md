@@ -6,11 +6,9 @@ tags: [personal]
 
 ## My name is Raazan.
 
-My name is Raazan.
-
 You may have already visited my [about](/about) page to learn more about me.
 
-I am a first-year MS Computer Science student at MTSU. I enjoy creating projects that help improve efficiency and just generally make me happy. I'm currently working on several projects on my own time. You can find more about them [here.](/projects)
+I am a MS Computer Science student at MTSU. I enjoy creating projects that help improve efficiency and just generally make me happy. I'm currently working on several projects on my own time. You can find more about them [here.](/projects)
 
 If you would like to see my code, take a look at my [github.](https://github.com/raaz4n)
 

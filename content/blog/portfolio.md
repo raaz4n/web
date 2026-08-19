@@ -1,5 +1,5 @@
 ---
-title: "Portfolio website"
+title: "Portfolio website (outdated)"
 date: "2025-11-29"
 tags: [projects, personal]
 ---
