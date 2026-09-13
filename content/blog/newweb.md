@@ -14,5 +14,5 @@ Sources:
 Dark mode ~/ background: [https://x.com/hexh__](https://x.com/hexh__)  
 Light mode ~/ background: Yume Nikki white desert map  
 Header background: [https://www.pixiv.net/en/artworks/145574798](https://www.pixiv.net/en/artworks/145574798)  
-Missingno anim: [https://www.deviantart.com/cortoony/art/Missingno-821694522](https://www.deviantart.com/cortoony/art/Missingno-821694522)  
+Flower: myself :)
 Logo background: [https://www.pixiv.net/en/artworks/89075952](https://www.pixiv.net/en/artworks/89075952)  

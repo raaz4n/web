@@ -23,7 +23,7 @@ export default function Home() {
                 </div>
                 <div className="artpiece">
                     <div style={{ maxHeight: "min(var(--welcome-section-height), 760px)" }}>
-                        <img className="artpiece-img" src="/photos/missingno.gif" alt="" />
+                        <img className="artpiece-img" src="/photos/temp.png" alt="" />
                     </div>
                 </div>
             </div>
