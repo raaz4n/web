@@ -14,7 +14,7 @@ Unfortunately, I'm unable to say which company this was as per their guidelines 
 
 I was browsing many VDPs for a while before my school semester started in hopes of finding a bug or vulnerability within a website. This company stood out to me because they are in a field that I like (which I will not be naming here, ofc), and I had confidence that I could find something.
 
-I start off all of my VDP or bug bounty work by first scanning for subdomains/directories. The tool I usually use is [r3turn](https://raazan.dev/blog/r3turn), which you can find [here.](https://github.com/raaz4n/r3turn/). After scanning the main domain which was given in the VDP, I found a fleet/business related subdomain which gave a 200 response.
+I start off all of my VDP or bug bounty work by first scanning for subdomains/directories. The tool I usually use is [r3turn](https://raazan.dev/blog/r3turn), which you can find [here.](https://github.com/raaz4n/r3turn/) After scanning the main domain which was given in the VDP, I found a fleet/business related subdomain which gave a 200 response.
 
 Through this subdomain, I was immediately prompted with a website meant for fleets to purchase from the company. I scanned for SQL and XSS vulnerabilities as per usual, but nothing immediately showed up. I decided to look through the page source of the website, and saw several parameters within it. A parameter that caught my eye was 'cat'
 
