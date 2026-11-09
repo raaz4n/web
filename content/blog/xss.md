@@ -34,7 +34,7 @@ To my surprise, it was definitely vulnerable.
 
 I didn't think that such a simple bug would be present in a website of a multi-billion dollar company, especially in 2026, but I was wrong.
 
-One thing to note is that this website had a CF WAF present as well. I tested using alert( as well but that threw a CF error, so I imagine there is some malfunction within the WAF. The data is inputted into a <script> block without any encoding, which was the root cause of this vulnerability.
+One thing to note is that this website had a CF WAF present as well. I tested using alert( as well but that threw a CF error, so I imagine there is some malfunction within the WAF. The data is inputted into a `<script>` block without any encoding, which was the root cause of this vulnerability.
 
 ### How was it resolved?
 
