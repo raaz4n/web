@@ -19,7 +19,7 @@ export default function About() {
                 <br/>
 
                 <p>interested in my skills?</p>
-                <a style={{ color: 'var(--resume)' }} href="/files/portfolio3.pdf" target="_blank" rel="noreferrer noopener">my resume ░</a>
+                <a style={{ color: 'var(--resume)' }} href="/files/portfolio5.pdf" target="_blank" rel="noreferrer noopener">my resume ░</a>
 
                 <h2>at present</h2>
                 <li>looking for a position involved in cybersecurity</li>

@@ -49,9 +49,9 @@ export default function Home() {
                 <div className="section-copy-wrap">
                     <article className="section-copy">
                         <h1>Selected works.</h1>
-                        <a href="/blog/homelab">Detecting an admin creation alert within a Wazuh home lab</a>
+                        <a href="/blog/xss">How I detected XSS within a multi-billion dollar company</a>
                         <br/>
-                        <a href="/blog/newweb">New website</a>
+                        <a href="/blog/homelab">Detecting an admin creation alert within a Wazuh home lab</a>
                     </article>
                 </div>
                 <div className="section-stage" aria-hidden="true">
